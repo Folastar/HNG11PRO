@@ -19,6 +19,34 @@ body{
     color: #CCE0D5;
 }
 
+/* hamburger */
+.menu{
+    visibility: hidden;
+}
+.menu1,.menu2,.menu3{
+    
+    display: block;
+    transition: 0.4s;
+    width: 35px;
+    height: 5px;
+    background-color: #3D664E;
+    margin: .4rem 0;
+}
+.change .menu1{
+    transform: translate(0, 11px) rotate(-45deg);
+    /* background: #000; */
+}
+ .change .menu2{
+    opacity: 0;
+}
+.change .menu3{
+    transform: translate(0, -11px) rotate(45deg);
+}
+/* hamburger end========------------------------------------- */
+
+
+
+
 
 
 /* nav stylings start-------------------------------------------------- */
@@ -56,11 +84,14 @@ body{
 
 /* nav styling end-------------------------------------------------------------- */
 
-
+.rand-img{
+    text-align: center;
+}
 
 .main-section{
     
     height: 50vh;
+    margin-bottom: 2rem;
 }
 
 .ul__aboutme{
@@ -74,9 +105,96 @@ body{
 .img__aboutme{
     border-radius: 50%;
     box-shadow: 6px 10px 7px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 6px 10px 7px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 6px 10px 7px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 6px 10px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 10px 7px 0px rgba(0,0,0,0.75);
 }
 .name{
     text-align: center;
+}
+.flex__img{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+
+
+
+
+/* footer start----------------------------------------------------------- */
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.footer p{
+    margin: 2rem 0;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+/* responsive webpage */
+
+
+@media only screen and (max-width:600px){
+    *{
+        overflow-x: hidden;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        /* background-color: #fff; */
+    }   
+    .nav-sub{
+        visibility: hidden;
+        position: absolute;
+        top: 15vh;
+        right: 0;
+        left: 0;
+        border-radius:0px 0px 0px 20px;
+        transition:transform 0.3s ease-in;
+        transform:translate(100%);
+        background-color: #273F32;
+        width: 100%;
+        height: 100vh;
+    }
+    .nav-change{
+        transform:translate(0);
+        visibility: visible;
+    }
+
+    .nav__links ul{
+        display: flex;
+        flex-direction: column;   
+        justify-content: center;
+        align-items: center;    
+    }
+    .menu{
+        visibility: visible;
+    }
+
+
+
+
+    .ul__aboutme{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex__img{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
 }
